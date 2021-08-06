@@ -1,0 +1,12 @@
+REGEX = r"^[a-zA-Zéèçàëùñ'\s\-]{2,15}$"
+GENDER_M = ["M", "MALE"]
+GENDER_F = ["F", "FEMALE"]
+GENDER = ["M", "MALE", "F", "FEMALE"]
+MIN = 999
+MAX = 3001
+BULLET_CONTROL = ["BU", "BUL", "BULLET"]
+BLITZ_CONTROL = ["BL", "BLI", "BLITZ"]
+RAPID_CONTROL = ["R", "RA", "RAP", "RAPID"]
+TIME_CONTROL = ["BU", "BUL", "BULLET", "BL", "BLI", "BLITZ", "R", "RA", "RAP", "RAPID"]
+SCORES = [0, 0.5, 1]
+BIRTHDATE = [1900, 2008]

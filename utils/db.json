@@ -1,0 +1,26 @@
+{
+    "_default": {
+        "1": {
+            "name": "Magnus",
+            "rank": 2847
+        },
+        "2": {
+            "name": "Magnus",
+            "rank": 2847
+        }
+    },
+    "players": {
+        "1": {
+            "name": "Carlsen",
+            "rank": 2800
+        },
+        "2": {
+            "name": "Alexander",
+            "rank": 2700
+        },
+        "3": {
+            "name": "Liren",
+            "rank": 2600
+        }
+    }
+}
