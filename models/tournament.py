@@ -10,7 +10,16 @@ from models.player import pm
 
 class Tournament:
     """
-    Class Tournament:
+    Class representing a tournament
+
+    Attributes:
+    - Name : str
+    - Place : str
+    - Start date : str or datetime.date
+    - End date : str or datetime.date
+    - Time Control : Bullet/Blitz/Rapid
+    - Players : list of players identifiers (must be 8)
+    - Description : str
     """
     class Control(Enum):
         BULLET = "Bullet"
@@ -47,9 +56,7 @@ class Tournament:
                f"Place: {self._place}\n" \
                f"Dates: {self._start_date} to {self._end_date}\n" \
                f"Time control: {self._time_control}\n" \
-               f"Players : {self._players}\n" \
-               f"Description: {self._description}\n" \
-               f"Identifier: {self._identifier}"
+               f"Description: {self._description}"
 
     def __dict__(self):
         return {"name": self._name,
@@ -190,7 +197,7 @@ class Tournament:
             else:
                 for identifier in value:
                     player = pm.find(identifier)
-                    players.append(player)
+                    players.append(str(player.identifier))
                 self._players = players
         else:
             raise AttributeError(f"{value} is not a list")
@@ -217,4 +224,4 @@ class Tournament:
             raise AttributeError("Value is not str")
 
 
-tm = Manager(Tournament, "tournaments_db.json")
+tm = Manager(Tournament, "tournaments")

@@ -10,12 +10,13 @@ from utils.manager import Manager
 class Player:
     """
     Class representing a player
+
     Attributes:
-    - Name
-    - Last name
-    - Birthdate
-    - Gender
-    - Rank
+    - First name : str
+    - Last name : str
+    - Birthdate : str or datetime.date
+    - Gender : Male/Female
+    - Rank : int between 1000 and 3000
     """
     class Gender(Enum):
         MALE = "Male"
@@ -48,8 +49,7 @@ class Player:
                f"Lastname: {self._last_name}\n" \
                f"Gender: {self._gender}\n" \
                f"Birthdate: {self._birthdate}\n" \
-               f"Rank: {self._rank}\n" \
-               f"Identifier: {self._identifier}"
+               f"Rank: {self._rank}\n"
 
     def __dict__(self):
         return {"first_name": self._first_name,
@@ -164,4 +164,4 @@ class Player:
             raise AttributeError("Value is not str")
 
 
-pm = Manager(Player, "players_db.json")
+pm = Manager(Player, "players")

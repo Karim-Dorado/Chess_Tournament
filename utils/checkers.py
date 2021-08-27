@@ -2,12 +2,15 @@ import re
 from datetime import date
 from utils.constante import REGEX, GENDER, TIME_CONTROL
 from models.player import pm
+from models.tournament import tm
+from models.match_up import MatchUp, mm
+from utils.menu import Menu
 
 
 def check_name(value: str):
     check = input(f"{value.capitalize()}: ")
     while not re.match(REGEX, check):
-        print(f'{value} invalide')
+        print(f'invalid {value}')
         check = input(f"{value.capitalize()}: ")
     return check
 
@@ -107,21 +110,101 @@ def check_description():
     return description
 
 
+def check_player():
+    players = pm.find_all()
+    choices = []
+    for player in players:
+        choices.append((player.first_name + " " + player.last_name, str(player.identifier)))
+    choice = Menu('Choose player', choices).show()
+    return choice
+
+
 def check_players():
-    players = []
-    for i in range(1, 9):
-        check = True
-        identifier = input(f"Player {i} identifier: ")
-        while check:
-            try:
-                if identifier not in players:
-                    pm.find(identifier)
-                    check = False
-                else:
-                    print(f'{identifier} already stored in database')
-                    identifier = input(f"Player {i} identifier: ")
-            except AttributeError:
-                print(f'{identifier} not founded in database')
-                identifier = input(f"Player {i} identifier: ")
-        players.append(identifier)
-    return players
+    players = pm.find_all()
+    choices = []
+    players_list = []
+    for player in players:
+        choices.append((player.first_name + " " + player.last_name, str(player.identifier)))
+    for i in range(8):
+        for choice in choices:
+            if choice[1] in players_list:
+                choices.remove(choice)
+        menu = Menu('Add players', choices).show()
+        players_list.append(menu)
+    return players_list
+
+
+def check_tournaments():
+    tournaments = tm.find_all()
+    choices = []
+    for tournament in tournaments:
+        choices.append((tournament.name, str(tournament.identifier)))
+    menu = Menu('Choose tournament', choices).show()
+    return menu
+
+
+def check_match_up(identifier: str):
+    tournament = tm.find(identifier)
+    try:
+        match_up = mm.find(identifier)
+    except KeyError:
+        players = []
+        for value in tournament.players:
+            player = pm.find(value)
+            players.append({'name': player.last_name + " " + player.first_name, "rank": player.rank})
+        data = {"identifier": identifier, "players": players}
+        match_up = mm.create(**data)
+        mm.insert(**data)
+    return match_up
+
+
+def check_round(match_up: MatchUp):
+    match_up.create_round()
+    print(f"--- ROUND {match_up.nb_round} ---")
+    if match_up.nb_round == 1:
+        sorted(match_up.players, key=lambda x: x['rank'], reverse=True)
+        matches = (match_up.players[0], match_up.players[4]), \
+                  (match_up.players[1], match_up.players[5]), \
+                  (match_up.players[2], match_up.players[6]), \
+                  (match_up.players[3], match_up.players[7])
+    else:
+        p = sorted(match_up.players, key=lambda x: x['score'], reverse=True)
+        matches = (p[0], p[1]), \
+                  (p[2], p[3]), \
+                  (p[4], p[5]), \
+                  (p[6], p[7])
+    return matches
+
+
+def check_winner(player1: dict, player2: dict):
+    print(f"{player1['name']}: Score = {player1['score']}\n "
+          f"\t\tVS\n"
+          f"{player2['name']}: Score = {player2['score']}")
+    winner = [player1, player2, None]
+    options = {}
+    check = True
+    for nb, player in enumerate(winner, start=1):
+        options[nb] = player
+    for key in options:
+        if options[key] is not None:
+            print(f"OPTION {key}: {options[key]['name']}")
+        else:
+            print(f"OPTION {key}: {options[key]}")
+    response = input("Choose a winner: ")
+    while check:
+        try:
+            if int(response) in options:
+                if int(response) == 1:
+                    winner[0]['score'] += 1
+                elif int(response) == 2:
+                    winner[1]['score'] += 1
+                elif int(response) == 3:
+                    winner[0]['score'] += 0.5
+                    winner[1]['score'] += 0.5
+                check = False
+            else:
+                raise ValueError
+        except (KeyError, ValueError):
+            print(f"Please enter a valid response (must be 1, 2 or 3)")
+            response = input(f"Choose a winner: ")
+    return response
