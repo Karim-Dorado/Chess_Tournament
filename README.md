@@ -12,56 +12,6 @@ To run this program:
 4. Install packages listed in requirements.txt file.    
 5. Once required packages have been installed, run command (Windows OS): `python main.py`
 
-## Generate random variables and database
-
-Some functions - such as the review of the players and the tournaments - are really useful only after generating a database.  
-
-In addition to the program, a set of random variables (players, matches, rounds) has been added to generate random tournaments.  
-
-To generate a random tournament, launch random_tournament.py file from the terminal, once in the top-level folder of the project:  
-`python random_tournament.py`  
-
-The script will generate a set of 50 random players and 10 random tournaments.  
-
-# Functions
-
-Once the program launched, the welcome page presents the following options:
-
-## Generate new tournament 
-
-This option allows the creation of a new tournament of 8 players:
-* Each tournament includes 4 rounds of 2 matches;
-* The matches are generated according to a Swiss-pairing algorithm.
-* Optional sections have been added in controllers/controller_tournament.py and models/model_tournament  
-to visualize the functioning of the algorithm. 
-* All optional sections have been identified and can be deleted without affecting the program,  
-so as to guarantee a more user-friendly interface.
-
-## Players Database
-
-This option gives access to the database of all players. 
-
-The following actions are possible :
-
-1. **"See all players"**: See all database players and sort them by ranking or by last name ;
-2. **"Change player ranking"**: Change the ranking of a player;
-3. **"Add new player"**: Add a player to the database of players.  
-
-Options 2 and 3 allow to change the database of players without generating a new tournament.
-   
-## Tournaments Database
-
-This option gives access to the database all players. 
-
-The following actions are possible :
-
-1. **"See all tournaments"**: See all database tournaments, as well as the details of any tournament; 
-2. **"See tournament players"**: Search a tournament by name, location or year, and sort its players by ranking or by last name.
-
-## Quit program
-
-This option closes chess_scores_manager program. 
-
 # Generate flake8-html report
 
 flake8-html is a flake8 plugin to generate HTML reports of flake8 violations.
