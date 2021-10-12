@@ -205,6 +205,6 @@ def check_winner(player1: dict, player2: dict):
             else:
                 raise ValueError
         except (KeyError, ValueError):
-            print(f"Please enter a valid response (must be 1, 2 or 3)")
-            response = input(f"Choose a winner: ")
+            print("Please enter a valid response (must be 1, 2 or 3)")
+            response = input("Choose a winner: ")
     return response

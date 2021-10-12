@@ -1,0 +1,180 @@
+{
+    "match_up": {
+        "1": {
+            "identifier": "e03be7f1-3980-4b7e-8009-a66aa54b7243",
+            "nb_round": 3,
+            "players": [
+                {
+                    "name": "Carlsen Magnus",
+                    "rank": 2847,
+                    "score": 3
+                },
+                {
+                    "name": "Caruana Fabiano",
+                    "rank": 2820,
+                    "score": 2
+                },
+                {
+                    "name": "Liren Ding",
+                    "rank": 2791,
+                    "score": 2
+                },
+                {
+                    "name": "Nepomniachtchi Ian",
+                    "rank": 2789,
+                    "score": 1
+                },
+                {
+                    "name": "Aronian Levon",
+                    "rank": 2789,
+                    "score": 2
+                },
+                {
+                    "name": "Grischuk Alexander",
+                    "rank": 2777,
+                    "score": 1
+                },
+                {
+                    "name": "Giri Anish",
+                    "rank": 2776,
+                    "score": 1
+                },
+                {
+                    "name": "So Wesley",
+                    "rank": 2770,
+                    "score": 0
+                }
+            ]
+        }
+    },
+    "players": {
+        "1": {
+            "birthdate": "1990-11-30",
+            "first_name": "Magnus",
+            "gender": "Male",
+            "identifier": "df9340e9-d14e-458b-b2ea-23869320705a",
+            "last_name": "Carlsen",
+            "rank": 1001
+        },
+        "10": {
+            "birthdate": "2000-12-12",
+            "first_name": "Ok",
+            "gender": "Female",
+            "identifier": "30cdff4f-4f14-456d-96b3-ee7da9844cbd",
+            "last_name": "Ok",
+            "rank": 1001
+        },
+        "11": {
+            "birthdate": "1990-01-05",
+            "first_name": "Karim",
+            "gender": "Male",
+            "identifier": "e7647c46-425a-4da6-a10c-305b08131262",
+            "last_name": "Dorado",
+            "rank": 1001
+        },
+        "2": {
+            "birthdate": "1992-07-30",
+            "first_name": "Fabiano",
+            "gender": "Male",
+            "identifier": "78a7b246-a3c3-4e2a-af86-092d53c84e0a",
+            "last_name": "Caruana",
+            "rank": 2820
+        },
+        "3": {
+            "birthdate": "1992-10-24",
+            "first_name": "Ding",
+            "gender": "Male",
+            "identifier": "23cc6c05-ce8c-492f-baea-a150e64474c9",
+            "last_name": "Liren",
+            "rank": 2791
+        },
+        "4": {
+            "birthdate": "1990-07-14",
+            "first_name": "Ian",
+            "gender": "Male",
+            "identifier": "af7b0d1f-0a5e-40c1-a11d-9893839ec2bd",
+            "last_name": "Nepomniachtchi",
+            "rank": 2789
+        },
+        "5": {
+            "birthdate": "1982-10-06",
+            "first_name": "Levon",
+            "gender": "Male",
+            "identifier": "f47c8776-8f32-4c09-9fca-5a3798e90423",
+            "last_name": "Aronian",
+            "rank": 2789
+        },
+        "6": {
+            "birthdate": "1983-10-31",
+            "first_name": "Alexander",
+            "gender": "Male",
+            "identifier": "397dc3ca-9f2b-4d63-b0af-8b1bbbcc8be5",
+            "last_name": "Grischuk",
+            "rank": 2777
+        },
+        "7": {
+            "birthdate": "1994-06-28",
+            "first_name": "Anish",
+            "gender": "Male",
+            "identifier": "9b84abb1-1dfe-4c01-9bb2-1a131f1179f6",
+            "last_name": "Giri",
+            "rank": 2776
+        },
+        "8": {
+            "birthdate": "1993-10-09",
+            "first_name": "Wesley",
+            "gender": "Male",
+            "identifier": "9a0a7b4c-9c6a-4359-85f4-36bdd6f8b2a9",
+            "last_name": "So",
+            "rank": 2770
+        },
+        "9": {
+            "birthdate": "1987-12-12",
+            "first_name": "Ok",
+            "gender": "Female",
+            "identifier": "b46efb38-5482-465b-9c60-cec2dd70c378",
+            "last_name": "Ok",
+            "rank": 1500
+        }
+    },
+    "tournaments": {
+        "1": {
+            "description": "1",
+            "end_date": "2021-08-21",
+            "identifier": "e03be7f1-3980-4b7e-8009-a66aa54b7243",
+            "name": "Tournois test",
+            "place": "Paris",
+            "players": [
+                "df9340e9-d14e-458b-b2ea-23869320705a",
+                "78a7b246-a3c3-4e2a-af86-092d53c84e0a",
+                "23cc6c05-ce8c-492f-baea-a150e64474c9",
+                "af7b0d1f-0a5e-40c1-a11d-9893839ec2bd",
+                "f47c8776-8f32-4c09-9fca-5a3798e90423",
+                "397dc3ca-9f2b-4d63-b0af-8b1bbbcc8be5",
+                "9b84abb1-1dfe-4c01-9bb2-1a131f1179f6",
+                "9a0a7b4c-9c6a-4359-85f4-36bdd6f8b2a9"
+            ],
+            "start_date": "2021-08-20",
+            "time_control": "Blitz"
+        },
+        "2": {
+            "description": "1",
+            "end_date": "2021-08-02",
+            "identifier": "fc8d7019-23c5-492c-83c9-e2a03c252a55",
+            "name": "Tournois fr",
+            "place": "Paris",
+            "players": [
+                "df9340e9-d14e-458b-b2ea-23869320705a",
+                "30cdff4f-4f14-456d-96b3-ee7da9844cbd",
+                "78a7b246-a3c3-4e2a-af86-092d53c84e0a",
+                "23cc6c05-ce8c-492f-baea-a150e64474c9",
+                "af7b0d1f-0a5e-40c1-a11d-9893839ec2bd",
+                "f47c8776-8f32-4c09-9fca-5a3798e90423",
+                "397dc3ca-9f2b-4d63-b0af-8b1bbbcc8be5",
+                "9b84abb1-1dfe-4c01-9bb2-1a131f1179f6"
+            ],
+            "start_date": "2021-08-02",
+            "time_control": "Rapid"
+        }
+    }
+}

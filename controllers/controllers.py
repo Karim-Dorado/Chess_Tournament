@@ -92,16 +92,6 @@ def update_player_rank():
     router.navigate("/players")
 
 
-def update_player_rank1():
-    players = pm.find_all()
-    identifier = input("Enter player identifier: ")
-    for player in players:
-        if str(player.identifier) == identifier:
-            new_rank = check_rank()
-            player.rank = new_rank
-    router.navigate("/players")
-
-
 def start_tournament():
     tournament_identifier = check_tournaments()
     match_up = check_match_up(tournament_identifier)

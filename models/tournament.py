@@ -125,7 +125,7 @@ class Tournament:
         try:
             value = date.fromisoformat(value)
             if self._start_date > value:
-                raise AttributeError(f"Start date cannot be after end date.")
+                raise AttributeError("Start date cannot be after end date.")
             self._end_date = value
         except ValueError:
             raise ValueError(f"'{value}' is not valid, please enter a valid date (YYYY-MM-DD).")

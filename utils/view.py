@@ -13,4 +13,3 @@ class View:
         print("-" * len(self.title))
         print(self.content)
         print("-" * len(self.title))
-
