@@ -5,8 +5,8 @@ Program monitoring scores for a chess tournament, using Swiss pairing algorithm.
 
 To run this program:
 
-1. Clone chess_manager_program in target folder:  
-   git clone [https://github.com/Karim-Dorado/Chess_Tournament.git](https://github.com/Karim-Dorado/Chess_Tournament.git)    
+1. Clone chess_manager_program in our target folder:  
+   git clone [https://github.com/Karim-Dorado/Chess_Tournament](https://github.com/Karim-Dorado/Chess_Tournament)    
 2. Open your terminal and head to target folder.  
 3. Create a virtual environment to install required packages: 
 4. Install packages listed in requirements.txt file.    
